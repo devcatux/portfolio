@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import LazyImage from "@/components/LazyImage";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import HorizontalSlider from "@/components/HorizontalSlider";
 
 // TextImg1: Text on right, image on left
 const TextImg1 = () => {
@@ -231,6 +232,39 @@ const Comps = () => {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold mb-6">4. Text with Split Screen Image</h3>
             <TextImg4 />
+          </div>
+          
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold mb-6">5. Horizontal Image Slider with Grey Background</h3>
+            <p className="text-gray-600 mb-8">
+              A horizontal image slider with grey background and accent-colored navigation arrows.
+            </p>
+            <HorizontalSlider
+              title="Sketches Examples"
+              subtitle="Navigate through the sketches using the arrow buttons"
+              items={[
+                {
+                  image: "/images/bba/employer dashboard.svg",
+                  alt: "Employer dashboard sketch",
+                  caption: "Employer Dashboard - Streamlined management interface"
+                },
+                {
+                  image: "/images/bba/favourite jobs.svg",
+                  alt: "Favourite jobs sketch",
+                  caption: "Favourite Jobs - Easily track preferred opportunities"
+                },
+                {
+                  image: "/images/bba/employee profile.svg",
+                  alt: "Employee profile sketch",
+                  caption: "Employee Profile - Showcase skills and experience"
+                },
+                {
+                  image: "/images/bba/guest marketplace.svg",
+                  alt: "Guest marketplace sketch",
+                  caption: "Guest Marketplace - Discover available positions"
+                }
+              ]}
+            />
           </div>
         </div>
       </section>
