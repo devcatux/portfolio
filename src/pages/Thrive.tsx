@@ -166,11 +166,11 @@ const Thrive = () => {
       {showProgressBar && (
         <div className="fixed top-16 left-0 right-0 z-40 transition-opacity duration-300 bg-white shadow-md">
           {/* Custom progress bar - showing progress between steps */}
-          <div className="w-full h-3 bg-gray-200">
+          <div className="w-full h-2 bg-gray-200">
             {/* Use smoother calculated progress value */}
             <div
               style={{ width: `${progressPercent}%` }}
-              className="h-3 bg-portfolio-accent transition-all duration-700 ease-in-out"
+              className="h-2 bg-portfolio-accent transition-all duration-700 ease-in-out"
             />
           </div>
 
@@ -186,7 +186,7 @@ const Thrive = () => {
                 } transition-colors duration-500`}
               >
                 <div
-                  className={`w-5 h-5 rounded-full mb-1 border-2 ${
+                  className={`w-3 h-3 rounded-full mb-1 border-2 ${
                     idx <= currentStep
                       ? "border-portfolio-accent bg-portfolio-accent"
                       : "border-gray-400"

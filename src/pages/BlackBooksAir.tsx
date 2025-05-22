@@ -29,6 +29,8 @@ import { SliderCarousel } from "../components/SliderCarousel";
 import { HoverFullscreen } from "../components/HoverFullscreenCarousel";
 import { ColumnHoverFullscreen } from "../components/ColumnHoverFullscreen";
 import FeaturedCarousel from "../components/ui/PersonaGallery";
+import FinalDesigns from "../components/ui/FinalDesigns";
+import TextImg4 from '@/components/TextImg4'
 
 const UX_STEPS = ["Discover", "Define", "Develop", "Deliver", "Impact"];
 
@@ -519,11 +521,11 @@ const BlackBooksAir = () => {
       {showProgressBar && (
         <div className="fixed top-[70px] left-0 right-0 z-40 transition-opacity duration-300 bg-white shadow-md">
           {/* Custom progress bar - showing progress between steps */}
-          <div className="w-full h-3 bg-gray-200">
+          <div className="w-full h-2 bg-gray-200">
             {/* Use smoother calculated progress value */}
             <div
               style={{ width: `${progressPercent}%` }}
-              className="h-3 bg-portfolio-accent transition-all duration-700 ease-in-out"
+              className="h-2 bg-portfolio-accent transition-all duration-700 ease-in-out"
             />
           </div>
 
@@ -539,7 +541,7 @@ const BlackBooksAir = () => {
                 } transition-colors duration-500`}
               >
                 <div
-                  className={`w-5 h-5 rounded-full mb-1 border-2 ${
+                  className={`w-3 h-3 rounded-full mb-1 border-2 ${
                     idx <= currentStep
                       ? "border-portfolio-accent bg-portfolio-accent"
                       : "border-gray-400"
@@ -951,7 +953,7 @@ I focused on features facilitating negotiations and improving retention.
                 ]}
               />
             </div>
-
+        <TextImg4 />
 
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -1044,12 +1046,13 @@ I focused on features facilitating negotiations and improving retention.
             </p>
           </div>
           <div className="mt-4">
-            <FeaturedCarousel
+            <FinalDesigns
               images={[
                 { src: "/images/bba/browseStaff.png", alt: "Browse Staff" },
                 { src: "/images/bba/chat.png", alt: "Chat" },
                 { src: "/images/bba/companyProfile.png", alt: "Company Profile" },
                 { src: "/images/bba/employerDashboard.png", alt: "Employer Dashboard" },
+                { src: "/images/bba/employerDashboard2.png", alt: "Employer Dashboard" },
                 { src: "/images/bba/negotiate.png", alt: "Negotiate" },
                 { src: "/images/bba/jobMarketplace.png", alt: "Job Marketplace" }
               ]}

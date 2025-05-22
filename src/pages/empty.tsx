@@ -95,10 +95,10 @@ const CaseStudy = () => {
 			{showProgressBar && (
 				<div className="fixed top-16 left-0 right-0 z-40 transition-opacity duration-300 bg-white shadow-md">
 					{/* Custom progress bar - increased height for better visibility */}
-					<div className="w-full h-3 bg-gray-200">
-						<div
-							style={{ width: `${scrollProgress}%` }}
-							className="h-3 bg-portfolio-accent transition-all duration-300"
+					          <div className="w-full h-2 bg-gray-200">
+            <div
+              style={{ width: `${scrollProgress}%` }}
+              className="h-2 bg-portfolio-accent transition-all duration-300"
 						/>
 					</div>
 
