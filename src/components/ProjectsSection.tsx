@@ -1,4 +1,3 @@
-
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import { Button } from "./ui/button";
@@ -27,11 +26,11 @@ const ProjectsSection = () => {
     },
     {
       id: 3,
-      title: "Design Challenge",
-      description: "Digital product design challenge showcasing problem-solving.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      title: "MedicAir",
+      description: "Healthcare booking system for medical professionals.",
+      image: "/images/medicair-hero.png",
       category: "UX, UI",
-      link: "/Challenge",
+      link: "/MedicAir",
     },
   ];
 

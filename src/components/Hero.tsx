@@ -65,7 +65,7 @@ const Hero = () => {
           WebkitBackdropFilter: 'blur(32px)',
           pointerEvents: 'none',
         }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-transparent to-transparent lg:from-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-transparent to-transparent lg:from-transparent lg:h-[80px]"></div>
       </div>
     </div>
   );

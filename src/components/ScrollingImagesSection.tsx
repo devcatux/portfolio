@@ -11,56 +11,81 @@ const ScrollingImagesSection: React.FC<ScrollingImagesSectionProps> = ({
   title,
   subtitle,
   images,
-  className
+  className,
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [maxScroll, setMaxScroll] = useState(0);
+
+  useEffect(() => {
+    if (containerRef.current && trackRef.current) {
+      setMaxScroll(trackRef.current.scrollWidth - containerRef.current.offsetWidth);
+    }
+  }, [images]);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (sectionRef.current) {
+      if (sectionRef.current && containerRef.current) {
         const { top } = sectionRef.current.getBoundingClientRect();
         const scrollOffset = window.innerHeight - top;
-        
+
         if (scrollOffset > 0 && top < window.innerHeight) {
-          // Calculate a value between 0 and 1 based on how much of the section is visible
-          const scrollProgress = Math.min(1, scrollOffset / (window.innerHeight + sectionRef.current.offsetHeight));
-          setScrollPosition(scrollProgress * 100);
+          const scrollProgress = Math.min(
+            1,
+            scrollOffset / (window.innerHeight + sectionRef.current.offsetHeight)
+          );
+          setScrollPosition(scrollProgress);
         }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    
+    handleScroll(); // initial check
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const translateX = `-${scrollPosition * 0.4}%`; // Reduced multiplier for smoother scrolling
+  const translateX = `-${scrollPosition * maxScroll}px`;
 
   return (
-    <section ref={sectionRef} className="py-32 overflow-hidden bg-gray-50 ux-process-section">
+    <section
+      ref={sectionRef}
+      className="py-32 overflow-hidden bg-gray- ux-process-section"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-portfolio-blue mb-6">{title}</h2>
-          {subtitle && <p className="text-gray-600 max-w-2xl mx-auto">{subtitle}</p>}
+          {subtitle && (
+            <p className="text-gray-600 max-w-2xl mx-auto">{subtitle}</p>
+          )}
         </div>
       </div>
-      
-      <div className="scrolling-images-container my-12 max-w-[90%] mx-auto">
-        <div 
-          className="scrolling-images-track"
-          style={{ 
+
+      <div
+        ref={containerRef}
+        className="scrolling-images-container my-12 mx-auto overflow-hidden"
+      >
+        <div
+          ref={trackRef}
+          className="scrolling-images-track flex"
+          style={{
             transform: `translateX(${translateX})`,
-            width: `${images.length * 40}%` // Makes the track narrower for better sizing
+            transition: "transform 0.1s linear", // optional smooth transition
           }}
         >
           {images.map((image, index) => (
-            <div key={index} className="scrolling-image w-[342px]">
+            <div
+              key={index}
+              className="scrolling-image"
+              style={{ height: "368px", marginRight: "16px", flexShrink: 0 }}
+            >
               <img
                 src={image}
                 alt={`Project image ${index + 1}`}
-                className={`rounded-lg shadow-lg w-full object-cover ${className || 'h-64 md:h-72'}`}
+                className={`rounded-lg shadow-lg h-full w-auto ${className || ""}`}
+                style={{ objectFit: "contain" }}
               />
             </div>
           ))}

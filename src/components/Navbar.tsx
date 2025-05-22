@@ -26,10 +26,11 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/85 shadow-md backdrop-blur-xl py-2" : "bg-transparent py-4"
+        isScrolled ? "bg-white/85 shadow-md backdrop-blur-xl" : "bg-transparent"
       }`}
+      style={{ height: '60px' }}
     >
-      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+      <div className="container mx-auto h-full px-4 md:px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 text-2xl font-display font-bold text-portfolio-blue">
           <img src="/images/logo copy.png" alt="Kaska Design Logo" className="h-6 w-auto" />
           KAŚKA DESIGN
@@ -69,7 +70,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white absolute w-full shadow-lg py-4">
+        <div className="md:hidden bg-white absolute w-full shadow-lg py-4 top-[60px]">
           <div className="flex flex-col space-y-4 px-4">
             <Link
               to="/about"

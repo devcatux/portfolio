@@ -151,17 +151,16 @@ const TravelPerkHackathon = () => {
     window.addEventListener("scroll", scrollListener);
     handleScroll();
     return () => window.removeEventListener("scroll", scrollListener);
-  }, [discoverRef, defineRef, developRef, deliverRef, impactRef, ctaRef]);
+  }, []);
 
   return (
     <div className="min-h-screen">
       <Navbar />
       {/* Progress bar - fixed at the top of the viewport */}
       {showProgressBar && (
-        <div className="fixed top-16 left-0 right-0 z-40 transition-opacity duration-300 bg-white shadow-md">
+        <div className="fixed top-[70px] left-0 right-0 z-40 transition-opacity duration-300 bg-white shadow-md">
           {/* Custom progress bar - showing progress between steps */}
           <div className="w-full h-3 bg-gray-200">
-            {/* Use smoother calculated progress value */}
             <div
               style={{ width: `${progressPercent}%` }}
               className="h-3 bg-portfolio-accent transition-all duration-700 ease-in-out"
@@ -174,9 +173,7 @@ const TravelPerkHackathon = () => {
               <div
                 key={step}
                 className={`flex flex-col items-center ${
-                  idx <= currentStep
-                    ? "text-portfolio-accent"
-                    : "text-gray-400"
+                  idx <= currentStep ? "text-portfolio-accent" : "text-gray-400"
                 } transition-colors duration-500`}
               >
                 <div
@@ -247,7 +244,7 @@ const TravelPerkHackathon = () => {
             <div className="reveal-animation-right relative">
               <div className="relative">
                 <img
-                  src="/images/travelperk/hero.png"
+                  src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80"
                   alt="TravelPerk Interface"
                   className="rounded-xl shadow-xl w-full object-cover h-[500px]"
                 />
@@ -309,16 +306,11 @@ const TravelPerkHackathon = () => {
           <div className="-mx-4 md:-mx-8">
             <DesignProcessScroller 
               images={[
-                "/images/travelperk/process/1.png",
-                "/images/travelperk/process/2.png",
-                "/images/travelperk/process/3.png",
-                "/images/travelperk/process/4.png",
-                "/images/travelperk/process/5.png",
-                "/images/travelperk/process/1.png",
-                "/images/travelperk/process/2.png",
-                "/images/travelperk/process/3.png",
-                "/images/travelperk/process/4.png",
-                "/images/travelperk/process/5.png"
+                "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+                "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
               ]}
             />
           </div>
@@ -355,7 +347,7 @@ const TravelPerkHackathon = () => {
               </div>
               <div className="relative">
                 <img
-                  src="/images/travelperk/research.png"
+                  src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80"
                   alt="User research insights"
                   className="rounded-xl shadow-lg w-full object-cover h-[400px]"
                 />
@@ -374,7 +366,7 @@ const TravelPerkHackathon = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
               <div className="relative">
                 <img
-                  src="/images/travelperk/define.png"
+                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                   alt="User personas and journey mapping"
                   className="rounded-xl shadow-lg w-full object-cover h-[400px]"
                 />
@@ -410,9 +402,120 @@ const TravelPerkHackathon = () => {
         </div>
       </section>
 
+      {/* Develop Section */}
+      <section ref={developRef} className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="reveal-animation mb-12">
+            <h2 className="text-3xl font-bold mb-6 text-portfolio-accent">Develop</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Solution Approach</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>Integrated sustainability scoring system</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>Smart filtering for eco-friendly options</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>Corporate policy compliance checker</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>Detailed sustainability metrics</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>Streamlined booking workflow</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                  alt="Development process"
+                  className="rounded-xl shadow-lg w-full object-cover h-[400px]"
+                />
+                <div className="absolute -bottom-4 -right-4 h-24 w-2/3 bg-portfolio-accent rounded-xl -z-10"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deliver Section */}
+      <section ref={deliverRef} className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="reveal-animation mb-12">
+            <h2 className="text-3xl font-bold mb-6 text-portfolio-accent">Deliver</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+              <div className="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                  alt="Final design"
+                  className="rounded-xl shadow-lg w-full object-cover h-[400px]"
+                />
+                <div className="absolute -bottom-4 -left-4 h-24 w-2/3 bg-portfolio-accent rounded-xl -z-10"></div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Final Solution</h3>
+                <ul className="space-y-3 text-gray-700">
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>Intuitive sustainability scoring</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>Policy-compliant recommendations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>One-click booking process</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>Detailed sustainability metrics</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-portfolio-purple">•</span>
+                    <span>Corporate policy integration</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Section */}
+      <section ref={impactRef} className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="reveal-animation mb-12">
+            <h2 className="text-3xl font-bold mb-6 text-portfolio-accent">Impact</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-gray-50 p-6 rounded-xl">
+                <p className="font-bold text-2xl text-portfolio-accent mb-2">40%</p>
+                <p className="text-gray-700">Increase in sustainable bookings</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-xl">
+                <p className="font-bold text-2xl text-portfolio-accent mb-2">85%</p>
+                <p className="text-gray-700">User satisfaction rate</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-xl">
+                <p className="font-bold text-2xl text-portfolio-accent mb-2">30%</p>
+                <p className="text-gray-700">Reduction in booking time</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Next Project CTA */}
       <section ref={ctaRef} className="py-16 md:py-20">
-        <div className="case-study-container">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="bg-gray-100 rounded-md p-8 md:p-12 text-gray-800 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Next Project
@@ -426,7 +529,7 @@ const TravelPerkHackathon = () => {
                 className="bg-portfolio-accent hover:bg-portfolio-accentLight text-white"
                 asChild
               >
-                <a href="/works/black-books-air">
+                <a href="/BlackBooksAir">
                   <span>View Black Books Air</span>
                   <ArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
