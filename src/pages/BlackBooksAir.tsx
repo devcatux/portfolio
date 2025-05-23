@@ -1028,7 +1028,7 @@ const BlackBooksAir = () => {
 
 
 
-    <section ref={deliverRef} className="py-16 md:py-24 mb-0">
+    <section ref={deliverRef} className="py-16 md:py-24 mb-0 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1">
           <div className="reveal-animation mb-12">
@@ -1114,7 +1114,7 @@ const BlackBooksAir = () => {
     
 
     {/* Testing and Iterations section - replaced with just the section title */}
-    <section ref={insightsRef} className="py-16 md:py-24 bg-white">
+    <section ref={insightsRef} className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1">
           <div className="reveal-animation mb-12">
