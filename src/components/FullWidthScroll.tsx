@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const BrutalistScrollClean = () => {
+const FullWidthScroll = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrollPercent, setScrollPercent] = useState(0);
 
@@ -13,15 +13,7 @@ const BrutalistScrollClean = () => {
     },
     {
       title: "How Might We Questions",
-      hmwQuestions: [
-        "HMW promote fair and transparent wages aligned with industry standards?",
-        "HMW make the job search process more accessible and user-friendly?",
-        "HMW empower employees to confidently negotiate their salaries?",
-        "HMW improve job satisfaction and long-term retention in the workforce?",
-        "HMW help freelancers manage clients and schedules more effectively?",
-        "HMW foster better communication between employers and candidates?",
-        "HMW create a platform that ensures equitable access to job opportunities?",
-      ],
+      text: "To guide the design process, we framed How Might We (HMW) questions based on the key research pain points.",
       image: "/images/bba/employee make an offer.png",
     },
     {
@@ -79,118 +71,38 @@ const BrutalistScrollClean = () => {
           ref={containerRef}
           className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth h-[480px] scrollbar-hide"
         >
-          {slides.map((slide, index) => {
-            if (index === 2 || index === 3) {
-              // Slide 3 and 4 layout: left 25% text, right 75% image
-              return (
-                <div
-                  key={index}
-                  className="flex-shrink-0 w-full snap-center bg-white border-r-2 border-gray-300 last:border-r-0 relative"
-                >
-                  <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-[4px] text-sm z-10">
-                    {index + 1} / {slides.length}
-                  </div>
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-full snap-center bg-white border-r-2 border-gray-300 last:border-r-0 relative"
+            >
+              <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-[4px] text-sm z-10">
+                {index + 1} / {slides.length}
+              </div>
 
-                  <div className="h-full p-8 pt-16 flex items-center gap-8">
-                    {/* Left side: title + brief text */}
-                    <div className="w-1/4 flex flex-col justify-center space-y-4">
-                      <h2 className="text-3xl font-bold text-black leading-tight">
-                        {slide.title}
-                      </h2>
-                      <div className="w-12 h-1 bg-black rounded-[4px]"></div>
-                      <p className="text-gray-700 leading-relaxed">{slide.text}</p>
-                    </div>
-
-                    {/* Right side: image 75% width */}
-                    <div className="w-3/4 bg-white">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full h-auto max-h-[400px] object-contain"
-                      />
-                    </div>
-                  </div>
+              <div className="h-full p-8 pt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col justify-center space-y-6">
+                  <h2 className="text-4xl font-bold text-black leading-tight">
+                    {slide.title}
+                  </h2>
+                  <div className="w-20 h-1 bg-black rounded-[4px]"></div>
+                  <p className="text-gray-700 leading-relaxed bg-gray-50 p-6 border-l-4 border-accent/60 rounded-[4px] italic">
+                    {slide.text}
+                  </p>
                 </div>
-              );
-            }
 
-            if (index === 1) {
-              // Slide 2: no image, split left text (title + intro), right box with HMW questions and accent decoration
-              return (
-                <div
-                key={index}
-                className="flex-shrink-0 w-full snap-center bg-white border-r-2 border-gray-300 last:border-r-0 relative"
-              >
-                <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-[4px] text-sm z-10">
-                  {index + 1} / {slides.length}
-                </div>
-              
-                <div className="h-full p-8 pt-16 flex items-center gap-6">
-                  {/* Left: Title + intro */}
-                  <div className="w-1/2 flex flex-col justify-center space-y-4">
-                    <h2 className="text-3xl font-bold text-black leading-tight">{slide.title}</h2>
-                    <div className="w-12 h-1 bg-black rounded-[4px]"></div>
-                    <p className="text-gray-700">
-                      To guide the design process, we framed How Might We (HMW) questions based on the key research pain points.
-                    </p>
-                    <p className="text-gray-700">
-                      These questions help us focus on creating solutions that address user needs and improve overall experience.
-                    </p>
-                  </div>
-              
-                  {/* Right: Compact HMW list */}
-                  <div className="w-1/2 bg-white p-6 shadow-[6px_6px_0px_0px_rgba(115,105,175,1)] border-2 border-gray-200 rounded-[4px] max-h-[360px] overflow-y-auto">
-                    <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm pr-2">
-                      {slide.hmwQuestions?.map((question, i) => (
-                        <li key={i}>{question}</li>
-                      ))}
-                    </ul>
+                <div className="flex items-center justify-center">
+                  <div className="bg-white shadow-md">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full h-auto max-h-[320px] object-contain"
+                    />
                   </div>
                 </div>
               </div>
-              
-              );
-            }
-
-            // Slide 0 (default layout) - simplified quote with left border only
-            return (
-              <div
-                key={index}
-                className="flex-shrink-0 w-full snap-center bg-white border-r-2 border-gray-300 last:border-r-0 relative"
-              >
-                <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-[4px] text-sm z-10">
-                  {index + 1} / {slides.length}
-                </div>
-
-                <div className="h-full p-8 pt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="flex flex-col justify-center space-y-6">
-                    <h2 className="text-4xl font-bold text-black leading-tight">
-                      {slide.title}
-                    </h2>
-                    <div className="w-20 h-1 bg-black rounded-[4px]"></div>
-
-                    <p
-  className="relative text-gray-700 leading-relaxed bg-gray-50 p-6 border-l-4 border-accent/60 rounded-[4px] italic
-             before:absolute before:top-0 before:left-2 before:text-8xl before:text-gray-300 before:font-serif before:content-['“']"
-  style={{ paddingLeft: "3.5rem" }} // increase left padding to make space for quote
->
-  {slide.text}
-</p>
-                  </div>
-
-                  <div className="flex items-center justify-center">
-                    <div className="bg-white shadow-[6px_6px_0px_0px_rgba(115,105,175,1)]">
-                      <img
-                        src={slide.image}
-                        alt={slide.title}
-                        className="w-full h-auto max-h-[320px] object-contain"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
         {/* Navigation buttons */}
@@ -213,4 +125,4 @@ const BrutalistScrollClean = () => {
   );
 };
 
-export default BrutalistScrollClean;
+export default FullWidthScroll; 

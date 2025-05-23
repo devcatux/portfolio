@@ -52,7 +52,7 @@ const ScrollingImagesSection: React.FC<ScrollingImagesSectionProps> = ({
   return (
     <section
       ref={sectionRef}
-      className="py-32 overflow-hidden bg-gray- ux-process-section"
+      className="py-32 overflow-hidden ux-process-section"
     >
       <div className="container mx-auto px-4">
         <div className="text-start mb-16">

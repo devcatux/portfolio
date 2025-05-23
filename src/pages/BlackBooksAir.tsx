@@ -37,7 +37,8 @@ import FullWidthScroll from "@/components/FullWidthScroll";
 import ClickableImageGallery from "@/components/ClickableImageGallery";
 import BeforeAndAfterSection from "@/components/BeforeAndAfterSection";
 import SimpleUserPersonas from "@/components/SimpleUserPersonas";
-
+import PersonaCarousel from "@/components/PersonaCarousel";
+// App working correctly after fixing component issues
 const UX_STEPS = ["Discover", "Define", "Develop", "Deliver", "Impact"];
 
 
@@ -847,16 +848,17 @@ const BlackBooksAir = () => {
 
       {/* Right image column */}
       <div className="max-w-4xl">
-        <ColumnHoverFullscreen
-          images={[{ src: "/images/bba/diagram.svg", alt: "Systems Map" }]}
-          className="w-full"
-        />
-      </div>
+  <img
+    src="/images/bba/diagram.svg"
+    alt="Systems Map"
+    className="w-full h-auto rounded-lg shadow-md"
+  />
+</div>
     </div>
 
     {/* Challenges below in a horizontal scrollable row */}
     <div className="reveal-animation mb-16 overflow-x-auto no-scrollbar">
-      <div className="flex gap-6 min-w-max">
+      <div className="flex gap-6 w-full md:justify-between lg:justify-evenly">
         {[
           {
             title: "Unsustainable hiring costs",
@@ -887,213 +889,142 @@ const BlackBooksAir = () => {
     </div>
 
     {/* Personas below */}
-    <SimpleUserPersonas />
+    <PersonaCarousel />
   </div>
 </section>
 
 
-
-      {/* Define section - with background */}
-      <section ref={defineRef} className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1">
-            <div className="reveal-animation mb-12">
-              <h2 className="text-3xl font-bold mb-4 text-portfolio-accent">Define</h2>
-            </div>
-          </div>
-
-
-          {/* Strategy Section */}
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-  {/* Left Column */}
-  <div className="reveal-animation">
-    <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">
-      Connecting research to solutions
-    </h3>
-    <p className="text-gray-700 text-lg mb-6">
-      Synthesizing qualitative insights and quantitative data, I uncovered systemic challenges in recruitment.
-    </p>
-
-    <ColumnHoverFullscreen
-      images={[{ src: "/images/bba/diagram.svg", alt: "Systems Map" }]}
-      className="w-full"
-    />
-  </div>
-
-  {/* Right Column */}
-  <div className="reveal-animation">
-    <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">Challenges</h3>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {/* Challenge Cards */}
-      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-        <h4 className="font-medium mb-2 text-portfolio-blue">Unsustainable hiring costs</h4>
-        <p className="text-gray-700">
-          High recruitment fees made it difficult for businesses to scale or replace staff efficiently.
-        </p>
-      </div>
-      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-        <h4 className="font-medium mb-2 text-portfolio-blue">Poor employee retention</h4>
-        <p className="text-gray-700">
-          Rapid turnover drained time and resources, disrupting team stability and continuity.
-        </p>
-      </div>
-      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-        <h4 className="font-medium mb-2 text-portfolio-blue">Chronic job switching</h4>
-        <p className="text-gray-700">
-          A mismatch in expectations, rigid roles, and burnout drove frequent career changes.
-        </p>
-      </div>
-      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-        <h4 className="font-medium mb-2 text-portfolio-blue">Inefficient hiring processes</h4>
-        <p className="text-gray-700">
-          Disjointed systems and slow workflows resulted in delays and missed talent.
-        </p>
-      </div>
-    </div>
-  </div>
   
-</div>
+{/* Develop Section - from Urban Sprout */}
+<section
+  ref={developRef}
+  className="py-16 md:py-24 bg-white relative overflow-hidden"
+>
+  {/* Background image */}
+<div className="absolute top-0 left-0 w-full h-full bg-[url('/images/bba/lightbulbs.png')] bg-no-repeat bg-right-top bg-contain pointer-events-none opacity-20" />
 
+{/* White gradient fade at the bottom */}
+<div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+  {/* Section Content */}
+  <div className="relative z-20 container mx-auto px-4 md:px-8">
+    <div className="mb-12">
+      <h2 className="text-3xl font-bold mb-6 text-portfolio-accent">Develop</h2>
 
-<SimpleUserPersonas/>
-          
-        
+      {/* Product Differentiation */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        <div>
+          <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">Product Differentiation</h3>
+          <div className="prose prose-lg">
+            <p className="text-gray-700">
+              I focused on designing for what users need to know, do, and feel throughout their hiring journey.
+              I focused on features facilitating negotiations and improving retention.
+            </p>
+          </div>
         </div>
-      </section>
 
-
-  
-  {/* Develop Section - from Urban Sprout */}
-  <section ref={developRef} className="py-16 md:py-24 bg-white">
-    <div className="container mx-auto px-4 md:px-8">
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-portfolio-accent">Develop</h2>
-
-          {/* procuct differentiation */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">Product Differentiation</h3>
-              <div className="prose prose-lg">
-                <p className="text-gray-700">
-                  I focused on designing for what users need to know, do, and feel throughout their hiring journey.
-
-I focused on features facilitating negotiations and improving retention.
-                </p>
-              </div>
+        <div>
+          <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">Addressing pain points</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h4 className="font-medium mb-2 text-portfolio-blue">Negotation is encouraged</h4>
+              <p className="text-gray-700">
+                Direct negotiation reduces hiring friction, enabling better alignment between employers and employees.
+              </p>
             </div>
 
-            <div>
-              <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">Addressing pain points</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h4 className="font-medium mb-2 text-portfolio-blue">Negotation is encouraged</h4>
-                  <p className="text-gray-700">
-                  Direct negotiation reduces hiring friction, enabling better alignment between employers and employees.
-                  </p>
-                </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h4 className="font-medium mb-2 text-portfolio-blue">Make an offer</h4>
+              <p className="text-gray-700">
+                This shift from a passive to an active job-seeking approach gives candidates greater control.
+              </p>
+            </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h4 className="font-medium mb-2 text-portfolio-blue">Make an offer</h4>
-                  <p className="text-gray-700">
-                  This shift from a passive to an active job-seeking approach gives candidates greater control.
-                  </p>
-                </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h4 className="font-medium mb-2 text-portfolio-blue">Timekeeping module</h4>
+              <p className="text-gray-700">
+                Automated shift tracking and invoicing reduces manual work, errors, and prevents time theft.
+              </p>
+            </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h4 className="font-medium mb-2 text-portfolio-blue">Timekeeping module</h4>
-                  <p className="text-gray-700">
-                  Automated shift tracking and invoicing reduces manual work, errors, and prevents time theft.
-                  </p>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h4 className="font-medium mb-2 text-portfolio-blue">Direct booking of contractors</h4>
-                  <p className="text-gray-700">
-                  Live availability and bookings calendar, skipping waitlist and empwering freelancers.
-                  </p>
-                </div>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+              <h4 className="font-medium mb-2 text-portfolio-blue">Direct booking of contractors</h4>
+              <p className="text-gray-700">
+                Live availability and bookings calendar, skipping waitlist and empwering freelancers.
+              </p>
             </div>
           </div>
-
-          
-          <ScrollingImagesSection
-            title="Sketches"
-            subtitle="I focused on features facilitating negotiations and improving job retention."
-            images={[
-              "/images/bba/employer dashboard.svg",  
-              "/images/bba/favourite jobs.svg",
-              "/images/bba/employee profile.svg",
-              "/images/bba/guest marketplace.svg",
-              "/images/bba/timekeeping.svg",
-            ]}
-          />
-          
-{/* full width scroll component */}
-<FullWidthScroll />
-
-
-
-
-
-
-          <div className="my-16">
-  <h2 className="text-3xl font-bold text-portfolio-blue mb-6 text-start">
-    Timekeeping
-  </h2>
- 
-
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-    {/* Text Column - Left */}
-    <div>
-    <p className="text-gray-600 mb-4">
-    Adressing the admininstarive overload pain point for staff and management
-  </p>
-  <p className="text-gray-600 mb-4">
-        Freelancers and business owners benefit from less admin and better time theft prevention with easy mobile clock-in/out.
-      </p>
-      <p className="text-gray-600 mb-4">
-        Managers gain instant insight into shift status to make faster staffing and payroll decisions.
-      </p>
-      <div className="bg-gray-50 p-8 rounded-xl mb-8">
-        <h3 className="text-xl font-semibold mb-4">Overview</h3>
-        <ul className="space-y-3 text-gray-600">
-          <li>
-            <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
-            Online clock-in tool simplifies time tracking via phones or tablets
-          </li>
-          <li>
-            <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
-            Automates invoicing and cuts manual work
-          </li>
-          <li>
-            <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
-            Real-time shift tracking for managers, including breaks and hours worked
-          </li>
-          <li>
-            <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
-            Live staff data helps reduce payroll errors and optimize staffing
-          </li>
-        </ul>
-      </div>
-
-      
-    </div>
-    <div className="flex justify-center items-center w-full">
-  <div className="w-full max-w-[200px] lg:max-w-[250px]">
-    <ClickableImageGallery />
-  </div>
-</div>
-
-
-  </div>
-</div>
-
-
-<BeforeAndAfterSection />
+        </div>
       </div>
     </div>
-  </section>
+
+    {/* Sketches Section */}
+    <ScrollingImagesSection
+      title="Sketches"
+      subtitle="I focused on features facilitating negotiations and improving job retention."
+      images={[
+        "/images/bba/employer dashboard.svg",  
+        "/images/bba/favourite jobs.svg",
+        "/images/bba/employee profile.svg",
+        "/images/bba/guest marketplace.svg",
+        "/images/bba/timekeeping.svg",
+      ]}
+    />
+
+    {/* Full Width Scroll Component */}
+    <FullWidthScroll />
+
+    {/* Timekeeping Section */}
+    <div className="my-16">
+      <h2 className="text-3xl font-bold text-portfolio-blue mb-6 text-start">
+        Timekeeping
+      </h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p className="text-gray-600 mb-4">
+            Adressing the admininstarive overload pain point for staff and management
+          </p>
+          <p className="text-gray-600 mb-4">
+            Freelancers and business owners benefit from less admin and better time theft prevention with easy mobile clock-in/out.
+          </p>
+          <p className="text-gray-600 mb-4">
+            Managers gain instant insight into shift status to make faster staffing and payroll decisions.
+          </p>
+          <div className="bg-gray-50 p-8 rounded-xl mb-8">
+            <h3 className="text-xl font-semibold mb-4">Overview</h3>
+            <ul className="space-y-3 text-gray-600">
+              <li>
+                <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+                Online clock-in tool simplifies time tracking via phones or tablets
+              </li>
+              <li>
+                <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+                Automates invoicing and cuts manual work
+              </li>
+              <li>
+                <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+                Real-time shift tracking for managers, including breaks and hours worked
+              </li>
+              <li>
+                <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+                Live staff data helps reduce payroll errors and optimize staffing
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center w-full">
+          <div className="w-full max-w-[200px] lg:max-w-[250px]">
+            <ClickableImageGallery />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Before and After */}
+    <BeforeAndAfterSection />
+  </div>
+</section>
 
 
 
@@ -1107,39 +1038,35 @@ I focused on features facilitating negotiations and improving retention.
       </div>
     </section>
 
-    
-
     {/* Final Designs Section */}
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="reveal-animation bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-          <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">Final Designs</h3>
+        <div className="reveal-animation">
+          <h2 className="text-3xl font-bold mb-6 text-portfolio-accent">Final Designs</h2>
           <div className="prose prose-lg mb-8">
             <p className="text-gray-700">
               Explore the high-fidelity mockups and final screens from the Black Books Air platform
             </p>
           </div>
-          <div className="mt-4">
-            <FinalDesigns
-              images={[
-                { src: "/images/bba/browseStaff.png", alt: "Browse Staff" },
-                { src: "/images/bba/chat.png", alt: "Chat" },
-                { src: "/images/bba/companyProfile.png", alt: "Company Profile" },
-                { src: "/images/bba/employerDashboard.png", alt: "Employer Dashboard" },
-                { src: "/images/bba/employerDashboard2.png", alt: "Employer Dashboard" },
-                { src: "/images/bba/negotiate.png", alt: "Negotiate" },
-                { src: "/images/bba/blog.png", alt: "Blog" },
-                { src: "/images/bba/adminPanel.png", alt: "Admin Panel" },
-                { src: "/images/bba/jobMarketplace.png", alt: "Job Marketplace" }
-              ]}
-              autoPlay={false}
-            />
-          </div>
+          <FinalDesigns
+            title="Interface Mockups"
+            images={[
+              { src: "/images/bba/browseStaff.png", alt: "Browse Staff" },
+              { src: "/images/bba/chat.png", alt: "Chat" },
+              { src: "/images/bba/companyProfile.png", alt: "Company Profile" },
+              { src: "/images/bba/employerDashboard.png", alt: "Employer Dashboard" },
+              { src: "/images/bba/employerDashboard2.png", alt: "Employer Dashboard" },
+              { src: "/images/bba/negotiate.png", alt: "Negotiate" },
+              { src: "/images/bba/blog.png", alt: "Blog" },
+              { src: "/images/bba/adminPanel.png", alt: "Admin Panel" },
+              { src: "/images/bba/jobMarketplace.png", alt: "Job Marketplace" }
+            ]}
+            autoPlay={false}
+          />
         </div>
       </div>
     </section>
    
-
     {/* Interactive Prototype section */}
     <section className="mt-16 mb-24">
       <div className="container mx-auto px-4 md:px-8">
