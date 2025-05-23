@@ -500,7 +500,42 @@ const Thrive = () => {
           </div>
         </div>
       </section>
+{/* Problem Statement Section */}
+<section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
+  {/* Background Image - From middle to off-screen right */}
+  <div className="absolute top-0 bottom-0 right-0 w-[50%] hidden md:block pointer-events-none select-none z-0">
+    <div className="w-full h-full relative">
+      <img 
+        src="/images/bba/problem.png" 
+        alt="Problem statement visualization" 
+        className="w-full h-full object-cover opacity-20 scale-in transform scale-150" 
+      />
+      {/* Gradient overlay for smooth left blend */}
+      <div 
+        className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-l from-transparent to-gray-50 pointer-events-none" 
+        style={{filter: 'blur(12px)'}} 
+      />
+    </div>
+  </div>
 
+  <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      {/* Text Column */}
+      <div className="slide-up mb-12 max-w-xl">
+        <h2 className="text-3xl font-bold mb-6 fade-in">The Problem Statement</h2>
+        <div className="prose prose-lg">
+          <p className="text-lg md:text-xl leading-relaxed fade-in stagger-2">
+            How might we <span className="font-bold text-portfolio-accent slide-up stagger-3">reduce hiring friction, lower recruitment costs and improve staff retention</span> in the hospitality industry, while <span className="font-bold text-portfolio-accent slide-up stagger-4">empowering employees with pay transparency, fair wages and negotiation tools</span>—ensuring a hiring process that is not just functional but also engaging?
+          </p>
+        </div>
+      </div>
+
+      {/* Empty Right Column */}
+      
+    </div>
+  </div>
+</section>
       {/* Develop Section */}
       <section ref={developRef} className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
