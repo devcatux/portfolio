@@ -55,10 +55,10 @@ const ScrollingImagesSection: React.FC<ScrollingImagesSectionProps> = ({
       className="py-32 overflow-hidden bg-gray- ux-process-section"
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-start mb-16">
           <h2 className="text-4xl font-bold text-portfolio-blue mb-6">{title}</h2>
           {subtitle && (
-            <p className="text-gray-600 max-w-2xl mx-auto">{subtitle}</p>
+            <p className="text-gray-600 max-w-2xl text-start">{subtitle}</p>
           )}
         </div>
       </div>

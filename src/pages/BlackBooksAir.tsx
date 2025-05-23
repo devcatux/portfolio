@@ -34,77 +34,10 @@ import FinalDesigns from "../components/ui/FinalDesigns";
 import TextImg4 from '@/components/TextImg4'
 import HorizontalSlider from "@/components/HorizontalSlider";
 import FullWidthScroll from "@/components/FullWidthScroll";
+import ClickableImageGallery from "@/components/ClickableImageGallery";
 
 const UX_STEPS = ["Discover", "Define", "Develop", "Deliver", "Impact"];
 
-// Add a new component for the clickable image gallery
-const ClickableImageGallery = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [
-    "/images/bba/timekeeping/01.png",
-    "/images/bba/timekeeping/02.png",
-    "/images/bba/timekeeping/03.png",
-    "/images/bba/timekeeping/04.png",
-    "/images/bba/timekeeping/05.png",
-    "/images/bba/timekeeping/06.png",
-    "/images/bba/timekeeping/07.png",
-    "/images/bba/timekeeping/08.png"
-  ];
-
-  const goToNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const goToPrevious = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
-  return (
-    <div className="relative max-w-xs mx-auto">
-      <img 
-        src={images[currentIndex]} 
-        alt={`Timekeeping interface screen ${currentIndex + 1}`} 
-        className="w-full rounded-3xl transition-opacity duration-300"
-      />
-      <div className="absolute -bottom-4 -right-4 h-24 w-2/3 rounded-md -z-10"></div>
-      
-      {/* Navigation arrows */}
-      <button 
-        onClick={goToPrevious}
-        className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-accent/40 flex items-center justify-center shadow-md transition-all hover:scale-110"
-        aria-label="Previous image"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-portfolio-blue">
-          <path d="m15 18-6-6 6-6"/>
-        </svg>
-      </button>
-      
-      <button 
-        onClick={goToNext}
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-accent/40 flex items-center justify-center shadow-md transition-all hover:scale-110"
-        aria-label="Next image"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-portfolio-blue">
-          <path d="m9 18 6-6-6-6"/>
-        </svg>
-      </button>
-      
-      {/* Image counter indicator */}
-      <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-1.5">
-        {images.map((_, idx) => (
-          <div 
-            key={idx} 
-            className={`w-2 h-2 rounded-full ${idx === currentIndex ? 'bg-portfolio-accent' : 'bg-gray-300'}`}
-          />
-        ))}
-      </div>
-      
-      
-    </div>
-  );
-};
 
 // Add a new component for the prototype gallery with its own separate logic
 const PrototypeGallery = () => {
@@ -117,7 +50,7 @@ const PrototypeGallery = () => {
     "/images/bba/prototype_last/05.png",
     "/images/bba/prototype_last/06.png",
     "/images/bba/prototype_last/07.png",
-    "/images/bba/prototype_last/08.png"
+    "/images/bba/prototype_last/08.png",
   ];
 
   const goToNext = (e: React.MouseEvent) => {
@@ -1086,46 +1019,12 @@ I focused on features facilitating negotiations and improving retention.
 {/* full width scroll component */}
 <FullWidthScroll />
 
-          {/* TO REMOVE                     ------------------- Additional Wireframe Exploration - Horizontal Slider */}
-          <div className="mb-16 mt-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-2xl font-semibold mb-4 text-portfolio-blue">Wireframe Exploration</h3>
-                <p className="text-lg text-gray-700 mb-8">
-                  These wireframes demonstrate the design process for key platform features, focusing on streamlined workflows and clear action paths for users.
-                </p>
-                <div className="bg-gray-50 p-8 rounded-xl">
-                  <h4 className="text-xl font-semibold mb-4">Key Design Principles</h4>
-                  <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block mt-2"></span>
-                      Direct negotiation interface between employer and applicant
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block mt-2"></span>
-                      Simplified dashboards with clear status indicators
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block mt-2"></span>
-                      Transparent communication channels throughout
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <ClickableImageGallery />
-              
-              </div>
-            </div>
-          </div>
 
 
 
 
 
-
- {/* New Timekeeping Section */}
-<div className="my-16">
+          <div className="my-16">
   <h2 className="text-3xl font-bold text-portfolio-blue mb-6 text-start">
     Timekeeping
   </h2>
@@ -1165,13 +1064,16 @@ I focused on features facilitating negotiations and improving retention.
         Managers gain instant insight into shift status to make faster staffing and payroll decisions.
       </p>
     </div>
-
-    {/* Image Column - Right */}
-    <div>
-      <ClickableImageGallery />
-    </div>
+    <div className="flex justify-center items-center w-full">
+  <div className="w-full max-w-[200px] lg:max-w-[250px]">
+    <ClickableImageGallery />
   </div>
 </div>
+
+
+  </div>
+</div>
+
 
 
       </div>
