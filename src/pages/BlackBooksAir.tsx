@@ -33,6 +33,7 @@ import FeaturedCarousel from "../components/ui/PersonaGallery";
 import FinalDesigns from "../components/ui/FinalDesigns";
 import TextImg4 from '@/components/TextImg4'
 import HorizontalSlider from "@/components/HorizontalSlider";
+import FullWidthScroll from "@/components/FullWidthScroll";
 
 const UX_STEPS = ["Discover", "Define", "Develop", "Deliver", "Impact"];
 
@@ -782,7 +783,7 @@ const BlackBooksAir = () => {
       {/* Problem Statement Section */}
       <section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
         <div className="scale-in">
-          <img src="images/bba/quest.png" alt="Problem statement visualization" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" style={{zIndex:0}} />
+          <img src="images/bba/problem.png" alt="Problem statement visualization" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" style={{zIndex:0}} />
         </div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="grid grid-cols-1">
@@ -884,7 +885,7 @@ const BlackBooksAir = () => {
     </p>
 
     <ColumnHoverFullscreen
-      images={[{ src: "/images/bba/diagram.svg", alt: "Insightful chart about hiring" }]}
+      images={[{ src: "/images/bba/diagram.svg", alt: "Systems Map" }]}
       className="w-full"
     />
   </div>
@@ -960,12 +961,12 @@ const BlackBooksAir = () => {
   {/* Develop Section - from Urban Sprout */}
   <section ref={developRef} className="py-16 md:py-24 bg-white">
     <div className="container mx-auto px-4 md:px-8">
-      <div className="reveal-animation mb-12">
+      <div className="mb-12">
         <h2 className="text-3xl font-bold mb-6 text-portfolio-accent">Develop</h2>
 
           {/* procuct differentiation */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <div className="reveal-animation">
+            <div>
               <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">Product Differentiation</h3>
               <div className="prose prose-lg">
                 <p className="text-gray-700">
@@ -976,7 +977,7 @@ I focused on features facilitating negotiations and improving retention.
               </div>
             </div>
 
-            <div className="reveal-animation">
+            <div>
               <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">Addressing pain points</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
@@ -1023,33 +1024,36 @@ I focused on features facilitating negotiations and improving retention.
             ]}
           />
           
-          {/* Additional Wireframe Exploration - Horizontal Slider */}
+{/* full width scroll component */}
+<FullWidthScroll />
+
+          {/* TO REMOVE                     ------------------- Additional Wireframe Exploration - Horizontal Slider */}
           <div className="mb-16 mt-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="slide-right">
-                <h3 className="text-2xl font-semibold mb-4 text-portfolio-blue fade-in">Wireframe Exploration</h3>
-                <p className="text-lg text-gray-700 mb-8 fade-in stagger-1">
+              <div>
+                <h3 className="text-2xl font-semibold mb-4 text-portfolio-blue">Wireframe Exploration</h3>
+                <p className="text-lg text-gray-700 mb-8">
                   These wireframes demonstrate the design process for key platform features, focusing on streamlined workflows and clear action paths for users.
                 </p>
-                <div className="bg-gray-50 p-8 rounded-xl slide-up stagger-2">
+                <div className="bg-gray-50 p-8 rounded-xl">
                   <h4 className="text-xl font-semibold mb-4">Key Design Principles</h4>
                   <ul className="space-y-3 text-gray-600">
-                    <li className="flex items-start fade-in stagger-1">
+                    <li className="flex items-start">
                       <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block mt-2"></span>
                       Direct negotiation interface between employer and applicant
                     </li>
-                    <li className="flex items-start fade-in stagger-2">
+                    <li className="flex items-start">
                       <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block mt-2"></span>
                       Simplified dashboards with clear status indicators
                     </li>
-                    <li className="flex items-start fade-in stagger-3">
+                    <li className="flex items-start">
                       <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block mt-2"></span>
                       Transparent communication channels throughout
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="scale-in">
+              <div>
                 <HorizontalSlider
                   items={[
                     {
@@ -1072,84 +1076,62 @@ I focused on features facilitating negotiations and improving retention.
               </div>
             </div>
           </div>
- {/* User Flows with HoverFullscreen Carousel */}
- <div className="mb-16">
-              <h3 className="text-2xl font-semibold mb-6 text-left text-portfolio-blue">User Flows</h3>
-              <HoverFullscreen
-                images={[
-                  "/images/bba/employee make an offer.png",
-                  "/images/bba/employer offer received.png"
-                ]}
-              />
-            </div>
-        <TextImg4 />
 
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-          <div>
-            <div className="bg-gray-50 p-8 rounded-xl mb-8">
-              <h3 className="text-xl font-semibold mb-4">User flows guided by HMW questions</h3>
-              <ul className="space-y-3 text-gray-600">
-              <li>
-                <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
-                HMW promote fair and transparent wages?
-                </li>
-                <li>
-                <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
-                HMW make the job search process more user-friendly?
-                </li>
-                <li>
-                <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
-                HMW empower employees to confidently negotiate salaries?
-                </li>
-                <li>
-                <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
-                HMW influencelong-term retention in the workforce?
-                </li>
-                <li>
-                <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
-                HMW improve the speed of communication?
-                </li>
-                
-              </ul>
-            </div>
-            
-          </div>
-          <div className="relative">
-      
-          </div>
-          
-        </div>
-
-        {/* New Timekeeping Section */}
-        <div className="my-16">
-            <h2 className="text-3xl font-bold text-portfolio-blue mb-6 text-center">Timekeeping</h2>
-            <p className="text-gray-600 max-w-3xl text-center mb-10">
-              Streamlining time tracking and administrative tasks for staff and management
-            </p>
-           
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-center">
-              {/* Text content - takes up more space on larger screens */}
-              <div className="lg:col-span-7 space-y-6">
-                
-                  
-               
-                
-               
-                <div className="text-center mt-4 text-sm text-gray-500">
-                  <p>Click through the screens to see the interface in action →</p>
-                </div>
-              </div>
-             
-              {/* Image gallery - takes up less space but still prominent */}
-              <div className="lg:col-span-5 flex justify-center items-center">
-                <ClickableImageGallery />
-              </div>
-            </div>
-          </div>
 
 
-       
+
+
+ {/* New Timekeeping Section */}
+<div className="my-16">
+  <h2 className="text-3xl font-bold text-portfolio-blue mb-6 text-start">
+    Timekeeping
+  </h2>
+  <p className="text-gray-600 max-w-3xl text-start mb-10">
+    Streamlining time tracking and administrative tasks for staff and management
+  </p>
+
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    {/* Text Column - Left */}
+    <div>
+      <div className="bg-gray-50 p-8 rounded-xl mb-8">
+        <h3 className="text-xl font-semibold mb-4">Overview</h3>
+        <ul className="space-y-3 text-gray-600">
+          <li>
+            <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+            Online clock-in tool simplifies time tracking via phones or tablets
+          </li>
+          <li>
+            <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+            Automates invoicing and cuts manual work
+          </li>
+          <li>
+            <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+            Real-time shift tracking for managers, including breaks and hours worked
+          </li>
+          <li>
+            <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+            Live staff data helps reduce payroll errors and optimize staffing
+          </li>
+        </ul>
+      </div>
+
+      <p className="text-gray-600 mb-4">
+        Freelancers and business owners benefit from less admin and better time theft prevention with easy mobile clock-in/out.
+      </p>
+      <p className="text-gray-600">
+        Managers gain instant insight into shift status to make faster staffing and payroll decisions.
+      </p>
+    </div>
+
+    {/* Image Column - Right */}
+    <div className="flex justify-center items-center">
+      <ClickableImageGallery />
+    </div>
+  </div>
+</div>
+
+
       </div>
     </div>
   </section>
@@ -1183,6 +1165,8 @@ I focused on features facilitating negotiations and improving retention.
                 { src: "/images/bba/employerDashboard.png", alt: "Employer Dashboard" },
                 { src: "/images/bba/employerDashboard2.png", alt: "Employer Dashboard" },
                 { src: "/images/bba/negotiate.png", alt: "Negotiate" },
+                { src: "/images/bba/blog.png", alt: "Blog" },
+                { src: "/images/bba/adminPanel.png", alt: "Admin Panel" },
                 { src: "/images/bba/jobMarketplace.png", alt: "Job Marketplace" }
               ]}
               autoPlay={false}
@@ -1429,7 +1413,16 @@ I focused on features facilitating negotiations and improving retention.
       </div>
     </div>
   </div>
+
 </section>
+
+
+
+
+
+          
+
+
 
 <Footer />
 </div>

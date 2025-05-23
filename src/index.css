@@ -145,6 +145,15 @@
 		@apply transition-transform duration-300 hover:scale-105;
 	}
 
+	/* Hide scrollbar styles */
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none;
+	}
+	.scrollbar-hide {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
 	.design-card {
 		@apply bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300;
 	}
