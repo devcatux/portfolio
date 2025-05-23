@@ -25,13 +25,13 @@ const BrutalistScrollClean = () => {
       image: "/images/bba/employee make an offer.png",
     },
     {
-      title: "Employee Making an Offer",
-      text: "User flows empower employees to proactively negotiate job offers.",
+      title: "Make an Offer",
+      text: "Employees are encouraged to proactively negotiate job offers.",
       image: "/images/bba/employee make an offer.png",
     },
     {
-      title: "Employer Received an Offer",
-      text: "Employers can receive and review offers, facilitating smooth hiring.",
+      title: "Salary Negotiations",
+      text: "Employers can counter-offer, facilitating faster hiring.",
       image: "/images/bba/employer offer received.png",
     },
   ];
@@ -102,7 +102,7 @@ const BrutalistScrollClean = () => {
                     </div>
 
                     {/* Right side: image 75% width */}
-                    <div className="w-3/4 bg-white shadow-[6px_6px_0px_0px_rgba(115,105,175,1)]">
+                    <div className="w-3/4 bg-white">
                       <img
                         src={slide.image}
                         alt={slide.title}
@@ -118,36 +118,37 @@ const BrutalistScrollClean = () => {
               // Slide 2: no image, split left text (title + intro), right box with HMW questions and accent decoration
               return (
                 <div
-                  key={index}
-                  className="flex-shrink-0 w-full snap-center bg-white border-r-2 border-gray-300 last:border-r-0 relative"
-                >
-                  <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-[4px] text-sm z-10">
-                    {index + 1} / {slides.length}
+                key={index}
+                className="flex-shrink-0 w-full snap-center bg-white border-r-2 border-gray-300 last:border-r-0 relative"
+              >
+                <div className="absolute top-4 left-4 bg-black text-white px-3 py-1 rounded-[4px] text-sm z-10">
+                  {index + 1} / {slides.length}
+                </div>
+              
+                <div className="h-full p-8 pt-16 flex items-center gap-6">
+                  {/* Left: Title + intro */}
+                  <div className="w-1/2 flex flex-col justify-center space-y-4">
+                    <h2 className="text-3xl font-bold text-black leading-tight">{slide.title}</h2>
+                    <div className="w-12 h-1 bg-black rounded-[4px]"></div>
+                    <p className="text-gray-700">
+                      To guide the design process, we framed How Might We (HMW) questions based on the key research pain points.
+                    </p>
+                    <p className="text-gray-700">
+                      These questions help us focus on creating solutions that address user needs and improve overall experience.
+                    </p>
                   </div>
-
-                  <div className="h-full p-8 pt-16 flex items-center gap-8">
-                    {/* Left side: title + intro paragraphs */}
-                    <div className="w-1/4 flex flex-col justify-center space-y-6">
-                      <h2 className="text-3xl font-bold text-black leading-tight">{slide.title}</h2>
-                      <div className="w-12 h-1 bg-black rounded-[4px]"></div>
-                      <p>
-                        To guide the design process, we framed How Might We (HMW) questions based on the key research pain points.
-                      </p>
-                      <p>
-                        These questions help us focus on creating solutions that address user needs and improve overall experience.
-                      </p>
-                    </div>
-
-                    {/* Right side: HMW questions box with accent decoration */}
-                    <div className="w-3/4 bg-white p-8 shadow-[6px_6px_0px_0px_rgba(115,105,175,1)] border-2 border-gray-200 rounded-[4px] max-h-[400px] overflow-y-auto">
-                      <ul className="list-disc list-inside space-y-3 text-gray-700">
-                        {slide.hmwQuestions?.map((question, i) => (
-                          <li key={i}>{question}</li>
-                        ))}
-                      </ul>
-                    </div>
+              
+                  {/* Right: Compact HMW list */}
+                  <div className="w-1/2 bg-white p-6 shadow-[6px_6px_0px_0px_rgba(115,105,175,1)] border-2 border-gray-200 rounded-[4px] max-h-[360px] overflow-y-auto">
+                    <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm pr-2">
+                      {slide.hmwQuestions?.map((question, i) => (
+                        <li key={i}>{question}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
+              </div>
+              
               );
             }
 

@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { 
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
+  Carousel, 
+  CarouselNext, 
+  CarouselPrevious 
 } from "@/components/ui/carousel";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -23,39 +21,32 @@ const FinalDesignsCarousel: React.FC<FinalDesignsCarouselProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [api, setApi] = useState<any>(null);
-  
+
   const onThumbnailClick = (index: number) => {
     setCurrentIndex(index);
     api?.scrollTo(index);
   };
 
-  const onSlideChange = React.useCallback(() => {
+  const onSlideChange = useCallback(() => {
     if (!api) return;
     setCurrentIndex(api.selectedScrollSnap());
   }, [api]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) return;
-    
+
     api.on('select', onSlideChange);
-    // Initialize the current index
     setCurrentIndex(api.selectedScrollSnap());
-    
+
     return () => {
       api.off('select', onSlideChange);
     };
   }, [api, onSlideChange]);
 
-  // Function to extract title from image path
   const getTitleFromPath = (path: string) => {
-    // Extract filename without extension
     const filename = path.split('/').pop()?.split('.')[0] || '';
-    
-    // Convert camelCase to Title Case with spaces
     return filename
-      // Insert a space before all capital letters, then uppercase the first letter
       .replace(/([A-Z])/g, ' $1')
-      // Capitalize the first letter
       .replace(/^./, (str) => str.toUpperCase())
       .trim();
   };
@@ -76,35 +67,41 @@ const FinalDesignsCarousel: React.FC<FinalDesignsCarouselProps> = ({
           </div>
         )}
 
-        <div className="relative py-4">
+        <div className="relative">
+          {/* Carousel wrapper with previous/next buttons */}
           <Carousel
-            opts={{
-              align: "start",
-            }}
-            className="w-full"
+            opts={{ align: "start" }}
+            className="w-full relative"
             setApi={setApi}
           >
-            <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 px-2">
-                  <Dialog>
+            {/* Horizontal scroll with grid-like layout */}
+            <ScrollArea className="w-full overflow-x-auto no-scrollbar py-4">
+              <div className="flex gap-4 px-2">
+                {images.map((image, index) => (
+                  <Dialog key={index}>
                     <DialogTrigger asChild>
-                      <div className="group overflow-hidden rounded-md bg-white shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105">
-                        <AspectRatio ratio={4/3} className="overflow-hidden">
+                      <div
+                        className={`group rounded-md bg-white shadow-lg cursor-pointer transform transition-all duration-300
+                          hover:scale-105 hover:shadow-xl
+                          ${currentIndex === index ? "scale-110 shadow-2xl border-2 border-portfolio-accent" : "border border-gray-200"}`}
+                        onClick={() => onThumbnailClick(index)}
+                        style={{ minWidth: "240px" }}
+                      >
+                        <AspectRatio ratio={4 / 3} className="overflow-hidden rounded-md">
                           <img
                             src={image}
                             alt={`${getTitleFromPath(image)} screen`}
-                            className="h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110 group-hover:brightness-110"
                           />
                         </AspectRatio>
-                        <div className="p-3 text-center">
-                          <p className="text-sm font-medium text-portfolio-blue">
+                        <div className="p-2 text-center">
+                          <p className="text-sm font-medium text-portfolio-blue truncate">
                             {getTitleFromPath(image)}
                           </p>
                         </div>
                       </div>
                     </DialogTrigger>
-                    <DialogContent className="max-w-5xl w-[95vw] h-auto p-1 bg-transparent border-none shadow-2xl">
+                    <DialogContent className="max-w-5xl w-[95vw] p-1 bg-transparent border-none shadow-2xl rounded-md">
                       <img
                         src={image}
                         alt={`${getTitleFromPath(image)} enlarged`}
@@ -112,14 +109,16 @@ const FinalDesignsCarousel: React.FC<FinalDesignsCarouselProps> = ({
                       />
                     </DialogContent>
                   </Dialog>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-0 bg-white/80 hover:bg-white" />
-            <CarouselNext className="right-0 bg-white/80 hover:bg-white" />
+                ))}
+              </div>
+            </ScrollArea>
+
+            <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full shadow-md z-10" />
+            <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full shadow-md z-10" />
           </Carousel>
         </div>
 
+        {/* Navigation dots */}
         <div className="mt-8 flex justify-center gap-2">
           {images.map((_, index) => (
             <button
@@ -132,40 +131,9 @@ const FinalDesignsCarousel: React.FC<FinalDesignsCarouselProps> = ({
             />
           ))}
         </div>
-
-        <div className="flex justify-center mt-8">
-          <div className="bg-white/80 rounded-md border border-gray-200 p-4 w-auto">
-            <div className="flex justify-center flex-wrap gap-3">
-              {images.map((image, index) => (
-                <button
-                  key={index}
-                  className={`relative h-16 w-24 rounded-md overflow-hidden shadow-sm transition-all duration-300 ${
-                    index === currentIndex 
-                      ? "border-2 border-portfolio-accent scale-110 shadow-md" 
-                      : "border border-gray-200 hover:border-portfolio-accent/50 hover:scale-105"
-                  }`}
-                  onClick={() => onThumbnailClick(index)}
-                >
-                  <img 
-                    src={image} 
-                    alt={`${getTitleFromPath(image)} thumbnail`}
-                    className="h-full w-full object-cover"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-1 ${
-                    index === currentIndex ? "opacity-100" : "opacity-0 hover:opacity-100"
-                  } transition-opacity`}>
-                    <span className="text-[9px] text-white font-medium line-clamp-1 w-full text-center">
-                      {getTitleFromPath(image)}
-                    </span>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
 };
 
-export default FinalDesignsCarousel; 
+export default FinalDesignsCarousel;

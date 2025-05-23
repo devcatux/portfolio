@@ -35,6 +35,8 @@ import TextImg4 from '@/components/TextImg4'
 import HorizontalSlider from "@/components/HorizontalSlider";
 import FullWidthScroll from "@/components/FullWidthScroll";
 import ClickableImageGallery from "@/components/ClickableImageGallery";
+import BeforeAndAfterSection from "@/components/BeforeAndAfterSection";
+import SimpleUserPersonas from "@/components/SimpleUserPersonas";
 
 const UX_STEPS = ["Discover", "Define", "Develop", "Deliver", "Impact"];
 
@@ -714,39 +716,7 @@ const BlackBooksAir = () => {
 
    
 
-<section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
-  {/* Background Image Container */}
-  <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0 overflow-hidden">
-    <img
-      src="/images/bba/problem.png"
-      alt="Problem statement visualization"
-      className="w-full h-full object-cover scale-in opacity-90"
-      // Removed blur or you can add small blur here:
-      style={{ filter: 'blur(2px)' }} // or remove filter completely
-    />
-    {/* Left-side fade overlay only */}
-    <div
-      className="absolute top-0 left-0 bottom-0 w-1/3 pointer-events-none"
-      style={{
-        background: 'linear-gradient(to right, #f9fafb, transparent)', // fade from bg-gray-50 to transparent
-      }}
-    />
-  </div>
 
-  {/* Text Content */}
-  <div className="container mx-auto px-4 md:px-8 relative z-10">
-    <div className="grid grid-cols-1">
-      <div className="slide-up mb-12 max-w-xl">
-        <h2 className="text-3xl font-bold mb-6 fade-in">The Problem Statement</h2>
-        <div className="prose prose-lg">
-          <p className="text-lg md:text-xl leading-relaxed fade-in stagger-2">
-            How might we <span className="font-bold text-portfolio-accent slide-up stagger-3">reduce hiring friction, lower recruitment costs and improve staff retention</span> in the hospitality industry, while <span className="font-bold text-portfolio-accent slide-up stagger-4">empowering employees with pay transparency, fair wages and negotiation tools</span>—ensuring a hiring process that is not just functional but also engaging?
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 {/* Problem Statement Section */}
 <section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
@@ -852,6 +822,74 @@ const BlackBooksAir = () => {
   </div>
 </section>
 
+<section ref={defineRef} className="py-16 md:py-24 bg-gray-50">
+  <div className="container mx-auto px-4 md:px-8">
+    <div className="grid grid-cols-1">
+      <div className="reveal-animation mb-12">
+        <h2 className="text-3xl font-bold mb-4 text-portfolio-accent">Define</h2>
+      </div>
+    </div>
+
+    {/* Connecting research to solutions - 2 columns */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 reveal-animation">
+      {/* Left text column */}
+      <div className="max-w-xl">
+        <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">
+          Connecting research to solutions
+        </h3>
+        <p className="text-gray-700 text-lg mb-4">
+          Businesses in the hospitality sector are constantly hiring as workers switch jobs, yet many places still struggle to stay staffed. Seasonal fluctuations in labor supply and demand are further disrupted by recruitment agencies. During peak seasons, agencies fail to provide enough qualified workers. In the off-season, many temporary workers seek full-time positions—only to leave again when busy periods return.
+        </p>
+        <p className="text-gray-700 text-lg">
+          This creates an unstable hiring loop where businesses either face a surplus of workers or struggle to find the right talent when they need it most.
+        </p>
+      </div>
+
+      {/* Right image column */}
+      <div className="max-w-4xl">
+        <ColumnHoverFullscreen
+          images={[{ src: "/images/bba/diagram.svg", alt: "Systems Map" }]}
+          className="w-full"
+        />
+      </div>
+    </div>
+
+    {/* Challenges below in a horizontal scrollable row */}
+    <div className="reveal-animation mb-16 overflow-x-auto no-scrollbar">
+      <div className="flex gap-6 min-w-max">
+        {[
+          {
+            title: "Unsustainable hiring costs",
+            description: "High recruitment fees made it difficult for businesses to scale or replace staff efficiently.",
+          },
+          {
+            title: "Poor employee retention",
+            description: "Rapid turnover drained time and resources, disrupting team stability and continuity.",
+          },
+          {
+            title: "Chronic job switching",
+            description: "A mismatch in expectations, rigid roles, and burnout drove frequent career changes.",
+          },
+          {
+            title: "Inefficient hiring processes",
+            description: "Disjointed systems and slow workflows resulted in delays and missed talent.",
+          },
+        ].map(({ title, description }) => (
+          <div
+            key={title}
+            className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex-shrink-0 w-72"
+          >
+            <h4 className="font-medium mb-2 text-portfolio-blue">{title}</h4>
+            <p className="text-gray-700">{description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Personas below */}
+    <SimpleUserPersonas />
+  </div>
+</section>
 
 
 
@@ -913,40 +951,15 @@ const BlackBooksAir = () => {
       </div>
     </div>
   </div>
+  
 </div>
 
+
+<SimpleUserPersonas/>
           
-          {/* User personas section */}
-          <div className="reveal-animation bg-white p-8 rounded-lg shadow-sm border border-gray-100">
-            <h3 className="text-2xl font-semibold mb-6 text-portfolio-blue">User Personas</h3>
-            <div className="prose prose-lg mb-8">
-              <p className="text-gray-700">
-                Employer, Employee and Freelancer personas
-              </p>
-            </div>
-            <div className="mt-4">
-              <FeaturedCarousel
-                images={[
-                  {
-                    src: "/images/bba/employer.png",
-                    alt: "Employer Persona"
-                  },
-                  {
-                    src: "/images/bba/employee.png",
-                    alt: "Employee Persona"
-                  },
-                  {
-                    src: "/images/bba/freelancer.png",
-                    alt: "Freelancer Persona"
-                  }
-                ]}
-                autoPlay={false}
-              />
-            </div>
-          </div>
+        
         </div>
       </section>
-
 
 
   
@@ -1028,13 +1041,20 @@ I focused on features facilitating negotiations and improving retention.
   <h2 className="text-3xl font-bold text-portfolio-blue mb-6 text-start">
     Timekeeping
   </h2>
-  <p className="text-gray-600 max-w-3xl text-start mb-10">
-    Streamlining time tracking and administrative tasks for staff and management
-  </p>
+ 
 
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
     {/* Text Column - Left */}
     <div>
+    <p className="text-gray-600 mb-4">
+    Adressing the admininstarive overload pain point for staff and management
+  </p>
+  <p className="text-gray-600 mb-4">
+        Freelancers and business owners benefit from less admin and better time theft prevention with easy mobile clock-in/out.
+      </p>
+      <p className="text-gray-600 mb-4">
+        Managers gain instant insight into shift status to make faster staffing and payroll decisions.
+      </p>
       <div className="bg-gray-50 p-8 rounded-xl mb-8">
         <h3 className="text-xl font-semibold mb-4">Overview</h3>
         <ul className="space-y-3 text-gray-600">
@@ -1057,12 +1077,7 @@ I focused on features facilitating negotiations and improving retention.
         </ul>
       </div>
 
-      <p className="text-gray-600 mb-4">
-        Freelancers and business owners benefit from less admin and better time theft prevention with easy mobile clock-in/out.
-      </p>
-      <p className="text-gray-600">
-        Managers gain instant insight into shift status to make faster staffing and payroll decisions.
-      </p>
+      
     </div>
     <div className="flex justify-center items-center w-full">
   <div className="w-full max-w-[200px] lg:max-w-[250px]">
@@ -1075,10 +1090,12 @@ I focused on features facilitating negotiations and improving retention.
 </div>
 
 
-
+<BeforeAndAfterSection />
       </div>
     </div>
   </section>
+
+
 
     <section ref={deliverRef} className="py-16 md:py-24 bg-gray-50 mb-0">
       <div className="container mx-auto px-4 md:px-8">
@@ -1089,6 +1106,8 @@ I focused on features facilitating negotiations and improving retention.
         </div>
       </div>
     </section>
+
+    
 
     {/* Final Designs Section */}
     <section className="py-16 bg-white">
@@ -1119,6 +1138,7 @@ I focused on features facilitating negotiations and improving retention.
         </div>
       </div>
     </section>
+   
 
     {/* Interactive Prototype section */}
     <section className="mt-16 mb-24">
