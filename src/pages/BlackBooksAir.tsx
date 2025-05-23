@@ -779,11 +779,39 @@ const BlackBooksAir = () => {
         </div>
       </section>
 
+{/* Problem Statement Section */}
+<section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
+  <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      {/* Text Column */}
+      <div className="slide-up mb-12 max-w-xl">
+        <h2 className="text-3xl font-bold mb-6 fade-in">The Problem Statement</h2>
+        <div className="prose prose-lg">
+          <p className="text-lg md:text-xl leading-relaxed fade-in stagger-2">
+            How might we <span className="font-bold text-portfolio-accent slide-up stagger-3">reduce hiring friction, lower recruitment costs and improve staff retention</span> in the hospitality industry, while <span className="font-bold text-portfolio-accent slide-up stagger-4">empowering employees with pay transparency, fair wages and negotiation tools</span>—ensuring a hiring process that is not just functional but also engaging?
+          </p>
+        </div>
+      </div>
+
+      {/* Image Column */}
+      <div className="relative w-full h-80 scale-in">
+        <img
+          src="/images/bba/problem.png"
+          alt="Problem statement visualization"
+          className="absolute right-0 top-0 w-full h-full object-contain opacity-20 pointer-events-none select-none"
+          style={{ zIndex: 0 }}
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* Problem Statement Section */}
       <section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
         <div className="scale-in">
-          <img src="images/bba/problem.png" alt="Problem statement visualization" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" style={{zIndex:0}} />
+          <img src="/images/bba/problem.png" alt="Problem statement visualization" className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none" style={{zIndex:0}} />
         </div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="grid grid-cols-1">
@@ -798,6 +826,191 @@ const BlackBooksAir = () => {
           </div>
         </div>
       </section>
+      {/* Problem Statement Section */}
+<section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
+  {/* Background Image with Animation */}
+  <img
+    src="/images/bba/problem.png"
+    alt="Problem statement visualization"
+    className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none select-none scale-in"
+    style={{ zIndex: 0 }}
+  />
+
+  {/* Text Content */}
+  <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <div className="grid grid-cols-1">
+      <div className="slide-up mb-12 max-w-xl">
+        <h2 className="text-3xl font-bold mb-6 fade-in">The Problem Statement</h2>
+        <div className="prose prose-lg">
+          <p className="text-lg md:text-xl leading-relaxed fade-in stagger-2">
+            How might we <span className="font-bold text-portfolio-accent slide-up stagger-3">reduce hiring friction, lower recruitment costs and improve staff retention</span> in the hospitality industry, while <span className="font-bold text-portfolio-accent slide-up stagger-4">empowering employees with pay transparency, fair wages and negotiation tools</span>—ensuring a hiring process that is not just functional but also engaging?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{/* Problem Statement Section */}
+<section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
+  {/* Background Image - Now only visible on right */}
+  <div className="scale-in absolute top-0 bottom-0 right-0 w-1/2 hidden md:block pointer-events-none select-none z-0">
+    <img 
+      src="/images/bba/problem.png" 
+      alt="Problem statement visualization" 
+      className="w-full h-full object-contain opacity-20" 
+    />
+  </div>
+
+  <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      {/* Text Column */}
+      <div className="slide-up mb-12 max-w-xl">
+        <h2 className="text-3xl font-bold mb-6 fade-in">The Problem Statement</h2>
+        <div className="prose prose-lg">
+          <p className="text-lg md:text-xl leading-relaxed fade-in stagger-2">
+            How might we <span className="font-bold text-portfolio-accent slide-up stagger-3">reduce hiring friction, lower recruitment costs and improve staff retention</span> in the hospitality industry, while <span className="font-bold text-portfolio-accent slide-up stagger-4">empowering employees with pay transparency, fair wages and negotiation tools</span>—ensuring a hiring process that is not just functional but also engaging?
+          </p>
+        </div>
+      </div>
+
+      {/* Empty Right Column (to balance layout) */}
+      <div className="hidden md:block"></div>
+
+    </div>
+  </div>
+</section>
+{/* Problem Statement Section */}
+<section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
+  {/* Background Image - Now only visible on right with original animation */}
+  <div className="absolute top-0 bottom-0 right-0 w-1/2 hidden md:block pointer-events-none select-none z-0">
+    <img 
+      src="/images/bba/problem.png" 
+      alt="Problem statement visualization" 
+      className="w-full h-full object-contain opacity-20 scale-in" 
+    />
+  </div>
+
+  <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      {/* Text Column */}
+      <div className="slide-up mb-12 max-w-xl">
+        <h2 className="text-3xl font-bold mb-6 fade-in">The Problem Statement</h2>
+        <div className="prose prose-lg">
+          <p className="text-lg md:text-xl leading-relaxed fade-in stagger-2">
+            How might we <span className="font-bold text-portfolio-accent slide-up stagger-3">reduce hiring friction, lower recruitment costs and improve staff retention</span> in the hospitality industry, while <span className="font-bold text-portfolio-accent slide-up stagger-4">empowering employees with pay transparency, fair wages and negotiation tools</span>—ensuring a hiring process that is not just functional but also engaging?
+          </p>
+        </div>
+      </div>
+
+      {/* Empty Right Column (to balance layout) */}
+      <div className="hidden md:block"></div>
+    </div>
+  </div>
+</section>
+{/* Problem Statement Section */}
+<section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
+  {/* Background Image - Right side, zoomed and offscreen */}
+  <div className="absolute top-0 bottom-0 right-[-10%] w-[70%] hidden md:block pointer-events-none select-none z-0">
+    <img 
+      src="/images/bba/problem.png" 
+      alt="Problem statement visualization" 
+      className="w-full h-full object-cover opacity-20 scale-in transform scale-125" 
+    />
+  </div>
+
+  <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      {/* Text Column */}
+      <div className="slide-up mb-12 max-w-xl">
+        <h2 className="text-3xl font-bold mb-6 fade-in">The Problem Statement</h2>
+        <div className="prose prose-lg">
+          <p className="text-lg md:text-xl leading-relaxed fade-in stagger-2">
+            How might we <span className="font-bold text-portfolio-accent slide-up stagger-3">reduce hiring friction, lower recruitment costs and improve staff retention</span> in the hospitality industry, while <span className="font-bold text-portfolio-accent slide-up stagger-4">empowering employees with pay transparency, fair wages and negotiation tools</span>—ensuring a hiring process that is not just functional but also engaging?
+          </p>
+        </div>
+      </div>
+
+      {/* Empty Right Column (balance only) */}
+      <div className="hidden md:block"></div>
+    </div>
+  </div>
+</section>
+{/* Problem Statement Section */}
+<section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
+  {/* Background Image - Right side, zoomed and blended on left */}
+  <div className="absolute top-0 bottom-0 right-[-15%] w-[75%] hidden md:block pointer-events-none select-none z-0">
+    <div className="w-full h-full relative">
+      <img 
+        src="/images/bba/problem.png" 
+        alt="Problem statement visualization" 
+        className="w-full h-full object-cover opacity-20 scale-in transform scale-150" 
+      />
+      {/* Gradient overlay for smooth left blend */}
+      <div 
+        className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-l from-transparent to-gray-50 pointer-events-none" 
+        style={{filter: 'blur(12px)'}} 
+      />
+    </div>
+  </div>
+
+  <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      {/* Text Column */}
+      <div className="slide-up mb-12 max-w-xl">
+        <h2 className="text-3xl font-bold mb-6 fade-in">The Problem Statement</h2>
+        <div className="prose prose-lg">
+          <p className="text-lg md:text-xl leading-relaxed fade-in stagger-2">
+            How might we <span className="font-bold text-portfolio-accent slide-up stagger-3">reduce hiring friction, lower recruitment costs and improve staff retention</span> in the hospitality industry, while <span className="font-bold text-portfolio-accent slide-up stagger-4">empowering employees with pay transparency, fair wages and negotiation tools</span>—ensuring a hiring process that is not just functional but also engaging?
+          </p>
+        </div>
+      </div>
+
+      {/* Empty Right Column */}
+      <div className="hidden md:block"></div>
+    </div>
+  </div>
+</section>
+{/* Problem Statement Section */}
+<section className="py-16 bg-gray-50 ux-process-section relative overflow-hidden">
+  {/* Background Image - Right side, zoomed and blended on left */}
+  <div className="absolute top-0 bottom-0 right-[-15%] w-[50%] hidden md:block pointer-events-none select-none z-0">
+    <div className="w-full h-full relative">
+      <img 
+        src="/images/bba/problem.png" 
+        alt="Problem statement visualization" 
+        className="w-full h-full object-cover opacity-20 scale-in transform scale-175" 
+      />
+      {/* Gradient overlay for smooth left blend */}
+      <div 
+        className="absolute top-0 left-0 bottom-0 w-45 bg-gradient-to-l from-transparent to-gray-50 pointer-events-none" 
+        style={{filter: 'blur(80px)'}} 
+      />
+    </div>
+  </div>
+
+  <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      
+      {/* Text Column */}
+      <div className="slide-up mb-12 max-w-xl">
+        <h2 className="text-3xl font-bold mb-6 fade-in">The Problem Statement</h2>
+        <div className="prose prose-lg">
+          <p className="text-lg md:text-xl leading-relaxed fade-in stagger-2">
+            How might we <span className="font-bold text-portfolio-accent slide-up stagger-3">reduce hiring friction, lower recruitment costs and improve staff retention</span> in the hospitality industry, while <span className="font-bold text-portfolio-accent slide-up stagger-4">empowering employees with pay transparency, fair wages and negotiation tools</span>—ensuring a hiring process that is not just functional but also engaging?
+          </p>
+        </div>
+      </div>
+
+      {/* Empty Right Column */}
+      <div className="hidden md:block"></div>
+    </div>
+  </div>
+</section>
+
 {/* Research Section */}
 <section ref={discoverRef} className="py-16 md:py-24 bg-white">
   <div className="container mx-auto px-4 md:px-8">
@@ -1125,7 +1338,7 @@ I focused on features facilitating negotiations and improving retention.
     </div>
 
     {/* Image Column - Right */}
-    <div className="flex justify-center items-center">
+    <div className="w-full max-w-[240px]">
       <ClickableImageGallery />
     </div>
   </div>
