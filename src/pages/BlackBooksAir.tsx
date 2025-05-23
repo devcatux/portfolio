@@ -823,7 +823,7 @@ const BlackBooksAir = () => {
   </div>
 </section>
 
-<section ref={defineRef} className="py-16 md:py-24 bg-gray-50">
+<section ref={defineRef} className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
   <div className="container mx-auto px-4 md:px-8">
     <div className="grid grid-cols-1">
       <div className="reveal-animation mb-12">
@@ -1028,7 +1028,7 @@ const BlackBooksAir = () => {
 
 
 
-    <section ref={deliverRef} className="py-16 md:py-24 bg-gray-50 mb-0">
+    <section ref={deliverRef} className="py-16 md:py-24 mb-0">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1">
           <div className="reveal-animation mb-12">
@@ -1036,10 +1036,10 @@ const BlackBooksAir = () => {
           </div>
         </div>
       </div>
-    </section>
+   
 
     {/* Final Designs Section */}
-    <section className="py-16 bg-white">
+ 
       <div className="container mx-auto px-4 md:px-8">
         <div className="reveal-animation">
           <h2 className="text-3xl font-bold mb-6 text-portfolio-accent">Final Designs</h2>
@@ -1070,67 +1070,48 @@ const BlackBooksAir = () => {
     {/* Interactive Prototype section */}
     <section className="mt-16 mb-24">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1">
-          <h2 className="text-3xl font-bold mb-8">Interactive Prototype</h2>
-          <p className="text-gray-600 max-w-3xl text-left mb-10">
-            Explore the final interactive prototype showcasing the complete user journey
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-center">
-          {/* Text content - takes up more space on larger screens */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="text-xl font-semibold text-portfolio-blue mb-3 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-portfolio-accent/20 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-portfolio-accent"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-                </div>
-                Complete user journey
-              </h3>
-              <p className="text-gray-700">
-                The interactive prototype demonstrates the <span className="text-portfolio-accent font-medium">complete user journey</span> from registration to job negotiation. Users can navigate through the platform's core features, experiencing the <span className="text-portfolio-accent font-medium">intuitive interface</span> and seamless transitions between different sections.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="text-xl font-semibold text-portfolio-blue mb-3 flex items-center">
-                <div className="w-8 h-8 rounded-full bg-portfolio-accent/20 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-portfolio-accent"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-                </div>
-                User testing insights
-              </h3>
-              <p className="text-gray-700">
-                This high-fidelity prototype was used in <span className="text-portfolio-accent font-medium">user testing sessions</span> to validate design decisions and identify areas for improvement. The feedback collected helped refine the final product, ensuring it meets both user needs and business objectives.
-              </p>
-            </div>
-            
-            <div className="text-center mt-4 text-sm text-gray-500">
-              <p>Click through the screens to explore the prototype →</p>
-            </div>
-            
-            <div className="flex justify-center mt-8">
-              <a 
-                href="/images/bba/protoype_last/01.png" 
-                target="_blank" 
-                className="inline-flex items-center px-4 py-2 bg-portfolio-accent text-white rounded-md hover:bg-portfolio-accent/90 transition-colors"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                  <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                </svg>
-                View Full Interactive Prototype
-              </a>
+        <h2 className="text-3xl font-bold text-portfolio-blue mb-6 text-start">
+          Interactive Prototype
+        </h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-gray-600 mb-4">
+              Complete the user journey from employer perspective: post a job and make an offer to a potential employee.
+            </p>
+            <div className="bg-gray-50 p-8 rounded-xl mb-8">
+              <h3 className="text-xl font-semibold mb-4">Features</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li>
+                  <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+                  Post job listings with detailed requirements
+                </li>
+                <li>
+                  <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+                  Browse qualified candidates
+                </li>
+                <li>
+                  <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+                  Negotiate terms directly with applicants
+                </li>
+                <li>
+                  <span className="w-2 h-2 rounded-full bg-portfolio-accent mr-3 inline-block"></span>
+                  Schedule interviews and finalize hiring
+                </li>
+              </ul>
             </div>
           </div>
-          
-          {/* Image gallery - takes up less space but still prominent */}
-          <div className="lg:col-span-5 flex justify-center items-center">
-            <EnhancedPrototypeGallery />
+
+          <div className="flex justify-center items-center w-full">
+            <div className="w-full max-w-[250px]">
+              <AutoPlayPrototypeGallery />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-
+    
 
     {/* Testing and Iterations section - replaced with just the section title */}
     <section ref={insightsRef} className="py-16 md:py-24 bg-white">
@@ -1147,7 +1128,7 @@ const BlackBooksAir = () => {
 
 
     {/* Results Section */}
-    <section className="py-16 bg-gray-50">
+   
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1">
           <div className="reveal-animation">
@@ -1191,10 +1172,10 @@ const BlackBooksAir = () => {
           </div>
         </div>
       </div>
-    </section>
+   
 
 {/* Reflections Section - Enhanced version */}
-<section className="py-16 bg-gradient-to-b from-white to-gray-50">
+<section className="py-16 gray-50">
   <div className="container mx-auto px-4 md:px-8">
     <div className="grid grid-cols-1">
       <div className="reveal-animation">
@@ -1318,6 +1299,81 @@ const BlackBooksAir = () => {
 <Footer />
 </div>
 );
+};
+
+// Replace the EnhancedPrototypeGallery with this new component
+const AutoPlayPrototypeGallery = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const images = [
+    "/images/bba/protoype_last/01.png",
+    "/images/bba/protoype_last/02.png",
+    "/images/bba/protoype_last/03.png",
+    "/images/bba/protoype_last/04.png",
+    "/images/bba/protoype_last/05.png",
+    "/images/bba/protoype_last/06.png",
+    "/images/bba/protoype_last/07.png",
+    "/images/bba/protoype_last/08.png",
+    "/images/bba/protoype_last/09.png",
+    "/images/bba/protoype_last/10.png",
+    "/images/bba/protoype_last/11.png",
+    "/images/bba/protoype_last/12.png"
+  ];
+
+  // Use a ref to hold the interval id so we can clear it easily
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+      }, 1000); // Match the 1000ms timing from ClickableImageGallery
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isPaused, images.length]);
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+    setIsPaused(true); // Pause slideshow when user clicks
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+  };
+
+  return (
+    <div className="relative max-w-xs mx-auto">
+      <img
+        src={images[currentIndex]}
+        alt={`Interactive prototype screen ${currentIndex + 1}`}
+        className="w-full rounded-3xl transition-opacity duration-300"
+      />
+      <div className="absolute -bottom-4 -right-4 h-24 w-2/3 rounded-md -z-10"></div>
+      
+      {/* Current image number indicator */}
+      <div className="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
+        {currentIndex + 1}/{images.length}
+      </div>
+
+      {/* Image counter indicator with wider active dot */}
+      <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-1.5">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => handleDotClick(idx)}
+            aria-label={`Go to image ${idx + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 focus:outline-none ${
+              idx === currentIndex
+                ? "bg-portfolio-accent w-6"
+                : "bg-gray-300 w-2 hover:bg-portfolio-accent"
+            }`}
+            style={{ cursor: "pointer" }}
+          />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default BlackBooksAir;

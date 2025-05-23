@@ -1520,7 +1520,7 @@ const BlackBooksAir = () => {
 						<h2 className="text-3xl font-bold mb-4 text-portfolio-accent">Deliver</h2>
 					</div>
 				</div>
-			</section>
+			
 
 			{/* Final Designs Section */}
 			<FinalDesignsCarousel 
@@ -1598,7 +1598,7 @@ const BlackBooksAir = () => {
 				</div>
 			</section>
 
-
+			</section>
 
 			{/* Testing and Iterations section - replaced with just the section title */}
 			<section ref={insightsRef} className="py-16 md:py-24 bg-white">
